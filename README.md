@@ -90,7 +90,7 @@ git clone https://github.com/bansal-shubham/Innovaccer-Summergeeks-Assignment.gi
 cd Innovaccer-Summergeeks-Assignment
 npm install
 ```
-Enter your Email ID and Password in ```app.js``` -
+4. Enter your Email ID and Password in ```app.js``` -
 ```
 In auth: {
     user: 'YOUR EMAIL ID',
@@ -101,14 +101,14 @@ and in ```from``` in local variable ```mailOptions``` in ```app.js``` used to se
 ```
 from: 'YOUR E-MAIL ID'
 ```
-Finally, update your ```FAST2SMS API authorization key``` in ```app.js``` in ```req.headers()``` function for sending sms through fast2sms.
+5. Finally, update your ```FAST2SMS API authorization key``` in ```app.js``` in ```req.headers()``` function for sending sms through fast2sms.
 ```
 Add details for sending message's via 'Fast2sms' API for example
 
 "authorization": "ENTER YOUR AUTHORIZATION KEY" 
 ```
-5. Run ```mongod``` in seperate terminal and ```node app.js``` in seperate terminal with the project.
-6. Then go to localhost:3500 .
+6. Run ```mongod``` in seperate terminal and ```node app.js``` in seperate terminal with the project.
+7. Then go to localhost:3500 .
 
 ## Author
 

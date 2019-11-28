@@ -7,10 +7,13 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 var nodemailer = require("nodemailer");
 var unirest = require("unirest");
+const dotenv = require('dotenv');
+dotenv.config();
+
 //Global Variables
 var find1, address, type = -1, message = "";
 //Connect to Innovaccer database using mongoose 
-mongoose.connect("mongodb://localhost/innovaccer", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 //Nodemailer transporter function
 var transporter = nodemailer.createTransport({
@@ -18,8 +21,8 @@ var transporter = nodemailer.createTransport({
   secure: false,
   port: 25,
   auth: {
-    user: 'enter your email id',
-    pass: 'password'
+    user: process.env.EMAIL_ID,
+    pass: process.env.EMAIL_PASS
   }, tls: {
     rejectUnauthorized: false
   }
@@ -89,7 +92,7 @@ app.post("/", function (req, res) {
           console.log(err);
         else {
           var mailOptions = {
-            from: 'Enter your email id',
+            from: process.env.EMAIL_ID,
             to: find1.hemail,
             subject: 'Mail from a Guest',
             text: content
@@ -109,7 +112,7 @@ app.post("/", function (req, res) {
           //sms sent to host
 
           req.headers({
-            "authorization": "Enter authorization key"
+            "authorization": process.env.TXT_KEY
           });
 
           req.form({
@@ -172,7 +175,7 @@ app.post("/checkout", function (req, res) {
         address = req.body.address;
 
         var mailOptions = {
-          from: 'Enter your email id',
+          from: process.env.EMAIL_ID,
           to: got[got.length - 1].vemail,
           subject: 'Details',
           text: "Thanks for your visit!" + "\n" + "Name: " + got[got.length - 1].vname + "\n" + "Email: " + got[got.length - 1].vemail + "\n" + "Phone no.: " + got[got.length - 1].vphone + "\n" + "Check-in time: " + got[got.length - 1].intime + "\n" + "Check-out time: " + now + "\n" + "Host name:  " + got[got.length - 1].hname + "\n" + "Address: " + address
@@ -205,6 +208,6 @@ app.post("/checkout", function (req, res) {
 });
 
 // Server listening at port 3500
-app.listen(3500, function () {
+app.listen(process.env.PORT,process.env.IP, function () {
   console.log("server has started");
 });

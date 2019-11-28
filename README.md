@@ -79,7 +79,7 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
 1. Install MongoDB and NodeJS.
 2. Clone the assignment using
 ```
-git clone 
+git clone https://github.com/bansal-shubham/Innovaccer-Summergeeks-Assignment.git
 ```
 3. Install dependencies after entering the project directory.
 ```

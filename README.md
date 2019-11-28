@@ -51,7 +51,7 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
 
 * **SMS received on host's contact after successful check-in.**
 
-![Checkin SMS](https://i.imgur.com/xQwrtn6.jpg)
+![Checkin SMS](https://i.imgur.com/xDiOvFG.jpg)
 
 
 * **Visitor Check-Out page**

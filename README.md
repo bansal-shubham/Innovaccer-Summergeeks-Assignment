@@ -3,7 +3,7 @@
 
 The fundamental rationale behind this endeavor was to make a product that can help a guest check into an office with no sort of, or rather, as minimal human intervention as possible.
 
-The web application gives the user two options: ```Check In``` and ```Check Out```.
+The web application gives the user two options: Check In and Check Out.
 
 Check In: The client is asked to enter his/her details as well as the Host's. Subsequently,a SMS and E-mail will be sent to the Host giving the details of the client.
 
@@ -81,27 +81,27 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
 ### Installing
 
 1. Install MongoDB and NodeJS.
-2. Clone the assignment using
+2. Clone the repository using
 ```
 git clone https://github.com/bansal-shubham/Innovaccer-Summergeeks-Assignment.git
 ```
-3. Install dependencies after entering the project directory.
+3. Go to the project directory and install the dependencies using the code below.
 ```
 cd Innovaccer-Summergeeks-Assignment
 npm install
 ```
-Then you'll have to update the email user and password in ```app.js``` -
+Enter your Email ID and Password in ```app.js``` -
 ```
-Add Email account for sending E-mail via node-mailer for example
-
-user: 'ENTER E-MAIL ID',                                
-pass: 'ENTER YOUR PASSWORD'
+In auth: {
+    user: 'YOUR EMAIL ID',
+    pass: 'PASSWORD'
+  }
 ```
-and ```from``` variable in ```sndMail()``` function in ```app.js``` used to send mails-
+and in ```from``` in local variable ```mailOptions``` in ```app.js``` used to send mails-
 ```
-from: 'ENTER E-MAIL ID'
+from: 'YOUR E-MAIL ID'
 ```
-Finally, update your ```FAST2SMS API authorization key``` in ```app.js``` in ```sndMsg()``` function for sending sms through fast2sms.
+Finally, update your ```FAST2SMS API authorization key``` in ```app.js``` in ```req.headers()``` function for sending sms through fast2sms.
 ```
 Add details for sending message's via 'Fast2sms' API for example
 

@@ -1,0 +1,53 @@
+<%- include ('partials/header') %>
+
+<div class="container" style="text-align: center;padding-top: 100px;">
+    <!-- <div class="jumbotron" style="opacity: 0.7;"> -->
+    <h1 class="display-4">Entry Management System</h1>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <a class="btn btn-success btn-lg" href="/checkin">Check-In</a>
+        </div>
+        <div class="col">
+            <a class="btn btn-danger btn-lg" href="/checkout">Checkout</a>
+        </div>
+        <div class="col"></div>
+    </div>
+    <!-- </div>  -->
+</div>
+<script>
+    $(document).ready(function () {
+            <% if (types == 1) { %>
+            setTimeout(function () {
+                $.notify({
+                    icon: 'fa fa-check',
+                    message: "<%= messages %>"
+                }, {
+                    type: "success",
+                    placement: {
+                        from: 'bottom'
+                    },
+                    delay: 4000
+                });
+            }, 1000);
+            <% } %>
+            <% if (types == 2) { %>
+            console.log('<%= messages %>');
+            setTimeout(function () {
+                $.notify({
+                    icon: 'fa fa-exclamation-triangle',
+                    message: "<%= messages %>"
+                }, {
+                    type: 'danger',
+                    placement: {
+                        from: 'bottom'
+                    },
+                    delay: 4000
+                });
+            }, 1000);
+            <% } %>
+        });
+</script>
+<%- include ('partials/footer') %>

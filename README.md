@@ -45,6 +45,10 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
 
 ![Checkin success](https://i.imgur.com/L6HRIEO.png)
 
+* **Check-in error message if the client has already checked-in.**
+
+![Checkout error](https://i.imgur.com/2y0UscH.png)
+
 * **E-mail received at host's end after successful check-in.**
 
 ![Checkin Mail](https://i.imgur.com/jM25ngO.png)

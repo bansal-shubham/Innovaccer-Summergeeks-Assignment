@@ -26,6 +26,10 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
     - Bootstrap
     - EJS
     - Font-awesome
+    
+## Deployment
+
+The website has been hosted on Heroku and can be easily accessed [here](https://serene-brushlands-34239.herokuapp.com/).
 
 ## Project Folder Structure:
 
@@ -78,7 +82,7 @@ Check Out: The client will be asked to enter their E-mail Id for verification af
 
 ![Database](https://i.imgur.com/9dPFKRD.png)
 
-### Installing
+### Installing and running the Web App locally
 
 1. Install MongoDB and NodeJS.
 2. Clone the repository using
@@ -90,24 +94,22 @@ git clone https://github.com/bansal-shubham/Innovaccer-Summergeeks-Assignment.gi
 cd Innovaccer-Summergeeks-Assignment
 npm install
 ```
-4. Enter your Email ID and Password in ```app.js``` -
+4. Create a ```.env``` file in the folder and enter your Email ID, Password and Database name there in the following manner
 ```
-In auth: {
-    user: 'YOUR EMAIL ID',
-    pass: 'PASSWORD'
-  }
+MONGO_URL=mongodb://localhost/"Enter database name"
+EMAIL_ID= "Enter your Email ID"
+EMAIL_PASS= "Enter your Password"
+IP=localhost
+PORT=3500
 ```
-and in ```from``` in local variable ```mailOptions``` in ```app.js``` used to send mails-
-```
-from: 'YOUR E-MAIL ID'
-```
-5. Finally, update your ```FAST2SMS API authorization key``` in ```app.js``` in ```req.headers()``` function for sending sms through fast2sms.
+5. Finally, update your ```FAST2SMS API authorization key``` in the same ```.env``` file in for sending sms through fast2sms.
 ```
 Add details for sending message's via 'Fast2sms' API for example
 
-"authorization": "ENTER YOUR AUTHORIZATION KEY" 
+TXT_KEY="Enter SMS Authorization Key"
 ```
 6. Run ```mongod``` in seperate terminal and ```node app.js``` in seperate terminal with the project.
+
 7. Then go to localhost:3500 .
 
 ## Author
